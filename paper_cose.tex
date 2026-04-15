@@ -299,6 +299,7 @@ Stage~3 (\emph{Verification}) generates $\mathcal{O}(\log n)$ inclusion proofs o
 
 \begin{figure}[t]
 \centering
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   font=\small,
   >=Stealth,
@@ -385,6 +386,7 @@ Stage~3 (\emph{Verification}) generates $\mathcal{O}(\log n)$ inclusion proofs o
 \end{scope}
 
 \end{tikzpicture}
+}%
 \caption{Three-stage pipeline architecture.
 Sensors stream log entries into the adaptive ingestion stage, which partitions them into resource-aware chunks.
 The Merkle construction stage builds a binary hash tree and anchors its root $R$ in a trusted store.
@@ -409,6 +411,7 @@ Verification recomputes a candidate root $R'$ from $h_i$ and the proof path, the
 
 \begin{figure}[t]
 \centering
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   font=\footnotesize,
   >=Stealth,
@@ -487,6 +490,7 @@ Verification recomputes a candidate root $R'$ from $h_i$ and the proof path, the
 };
 
 \end{tikzpicture}
+}%
 \caption{Merkle-tree inclusion proof for entry $L_0$.
 The verification path (orange) traces from the target leaf $h_0$ to the root~$R$.
 The proof consists of the three sibling hashes (green): $h_1$, $h_{2\text{-}3}$, and $h_{4\text{-}7}$.
@@ -713,7 +717,7 @@ Both modes converge to similar throughput at large scale; in this evaluation, th
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    width=0.85\columnwidth,
+    width=0.9\textwidth,
     height=6cm,
     xlabel={Number of log entries},
     ylabel={Throughput (logs/s)},
@@ -787,7 +791,7 @@ We ingest \num{20000} logs in windows of \num{2000} entries and record the resul
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    width=0.85\columnwidth,
+    width=0.9\textwidth,
     height=6cm,
     xlabel={Window index},
     ylabel={Chunk size (KB)},
@@ -849,7 +853,7 @@ Proof generation averages \SI{21.92}{ms} per proof with a mean proof size of \SI
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    width=0.85\columnwidth,
+    width=0.9\textwidth,
     height=6cm,
     xlabel={Batch size},
     ylabel={Per-entry verification time (ms)},
@@ -905,7 +909,7 @@ Proof generation averages \SI{21.92}{ms} per proof with a mean proof size of \SI
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    width=0.85\columnwidth,
+    width=0.9\textwidth,
     height=6cm,
     xlabel={Index},
     ylabel={Proof size (bytes)},
@@ -966,7 +970,7 @@ BLAKE2b  & 175073 & 21.17 & 256-bit \\
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    width=0.85\columnwidth,
+    width=0.9\textwidth,
     height=5.5cm,
     ybar,
     bar width=26pt,
@@ -991,7 +995,7 @@ BLAKE2b  & 175073 & 21.17 & 256-bit \\
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    width=0.85\columnwidth,
+    width=0.9\textwidth,
     height=5.5cm,
     ybar,
     bar width=26pt,
@@ -1057,7 +1061,7 @@ Precision, recall, and F1 are 1.0 in all cases, confirming the deterministic int
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    width=0.85\columnwidth,
+    width=0.9\textwidth,
     height=6cm,
     xlabel={Tampering ratio},
     ylabel={Detection time (ms)},
@@ -1096,7 +1100,7 @@ For all three modes, the sub-\SI{5}{MB} footprint suggests feasibility for memor
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    width=0.85\columnwidth,
+    width=0.9\textwidth,
     height=5.8cm,
     ybar,
     bar width=18pt,
@@ -1192,7 +1196,7 @@ Three observations warrant elaboration.
 \paragraph{Throughput advantage over blockchain-backed systems.}
 Blockchain systems such as \citet{putz2019secure} report throughput in the hundreds to low thousands of transactions per second, bounded by consensus round-trip latency.
 Our pipeline sustains $>\!130{,}000$~logs/s on the evaluation machine, primarily because it avoids distributed consensus and associated network overheads.
-This advantage is structural: it holds for any blockchain protocol, because consensus inherently serializes state transitions across multiple nodes.
+This advantage is structural in the sense that any consensus-based design incurs coordination overhead across multiple nodes.
 
 \paragraph{Random-access advantage over sequential schemes.}
 Key-evolution and aggregate-signature schemes require processing all entries up to index~$i$ to verify entry~$L_i$, yielding $\mathcal{O}(n)$ verification cost.
@@ -1201,7 +1205,7 @@ Our Merkle-proof verification requires only $\lceil \log_2 n \rceil$ hash evalua
 \paragraph{Minimal infrastructure requirements.}
 The pipeline requires only a single compute node and a trusted root anchor, which can be as simple as an append-only file on a separate partition or a remote key-value store.
 In contrast, blockchain systems require a consortium of peers, and TPM-based systems require specialized hardware.
-This minimal footprint makes the pipeline immediately deployable on existing IoT gateways.
+This minimal footprint makes the pipeline suitable for deployment on existing IoT gateways.
 
 \subsection{Methodological Contribution}
 
@@ -1217,7 +1221,7 @@ In practice, the root can be periodically committed to a remote append-only stor
 This decoupling allows the pipeline to operate at full throughput locally while anchoring roots at a pace compatible with network or hardware constraints.
 
 \paragraph{Hash-algorithm selection.}
-Our BLAKE2b benchmarks (\Cref{sec:hash_compare}) demonstrate a modest ingestion-throughput advantage over SHA-256 with comparable verification latency in this implementation.
+Our BLAKE2b benchmarks (\Cref{sec:hash_compare}) show a modest ingestion-throughput advantage over SHA-256 with comparable verification latency in this implementation.
 For deployments on IoT processors without dedicated SHA-256 acceleration, BLAKE2b can be an attractive alternative depending on platform characteristics.
 
 % ==========================================================================
