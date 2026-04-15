@@ -1,0 +1,319 @@
+{
+  "ingestion": {
+    "adaptive": [
+      {
+        "log_count": 1000,
+        "time_seconds_mean": 0.011406619992339984,
+        "time_seconds_std": 0.00041820292695275273,
+        "logs_per_second": 87762.48285377526,
+        "logs_per_second_std": 3209.0371707544714,
+        "runs": 5,
+        "tree_depth": 11,
+        "chunk_size_kb": 64.0
+      },
+      {
+        "log_count": 5000,
+        "time_seconds_mean": 0.03524409999954514,
+        "time_seconds_std": 0.003013307448694128,
+        "logs_per_second": 142711.16396957735,
+        "logs_per_second_std": 12341.046231384424,
+        "runs": 5,
+        "tree_depth": 14,
+        "chunk_size_kb": 64.0
+      },
+      {
+        "log_count": 10000,
+        "time_seconds_mean": 0.07041411999962292,
+        "time_seconds_std": 0.013833493627874364,
+        "logs_per_second": 145767.20390019374,
+        "logs_per_second_std": 23974.923785840216,
+        "runs": 5,
+        "tree_depth": 15,
+        "chunk_size_kb": 64.0
+      },
+      {
+        "log_count": 50000,
+        "time_seconds_mean": 0.34207822000607846,
+        "time_seconds_std": 0.04447184803988589,
+        "logs_per_second": 148175.69158579057,
+        "logs_per_second_std": 19403.529113443823,
+        "runs": 5,
+        "tree_depth": 17,
+        "chunk_size_kb": 64.0
+      },
+      {
+        "log_count": 100000,
+        "time_seconds_mean": 0.7489261600014288,
+        "time_seconds_std": 0.060994699894612786,
+        "logs_per_second": 134242.38208262477,
+        "logs_per_second_std": 11056.37901149297,
+        "runs": 5,
+        "tree_depth": 18,
+        "chunk_size_kb": 64.0
+      }
+    ],
+    "fixed": [
+      {
+        "log_count": 1000,
+        "time_seconds_mean": 0.008387520001269877,
+        "time_seconds_std": 0.0021426287201769694,
+        "logs_per_second": 125869.31666031502,
+        "logs_per_second_std": 32973.05286419366,
+        "runs": 5,
+        "tree_depth": 11,
+        "chunk_size_kb": 16.0
+      },
+      {
+        "log_count": 5000,
+        "time_seconds_mean": 0.0319132799981162,
+        "time_seconds_std": 0.0042854222117710925,
+        "logs_per_second": 158904.82851511938,
+        "logs_per_second_std": 20822.76754894044,
+        "runs": 5,
+        "tree_depth": 14,
+        "chunk_size_kb": 16.0
+      },
+      {
+        "log_count": 10000,
+        "time_seconds_mean": 0.0754012599994894,
+        "time_seconds_std": 0.011355847351533338,
+        "logs_per_second": 134850.61278799726,
+        "logs_per_second_std": 18558.479650927653,
+        "runs": 5,
+        "tree_depth": 15,
+        "chunk_size_kb": 16.0
+      },
+      {
+        "log_count": 50000,
+        "time_seconds_mean": 0.34222168000414965,
+        "time_seconds_std": 0.016277646914461683,
+        "logs_per_second": 146376.18477871787,
+        "logs_per_second_std": 7153.957175734283,
+        "runs": 5,
+        "tree_depth": 17,
+        "chunk_size_kb": 16.0
+      },
+      {
+        "log_count": 100000,
+        "time_seconds_mean": 0.7241479200019967,
+        "time_seconds_std": 0.05835591775293471,
+        "logs_per_second": 138849.50617225753,
+        "logs_per_second_std": 11755.709871945366,
+        "runs": 5,
+        "tree_depth": 18,
+        "chunk_size_kb": 16.0
+      }
+    ]
+  },
+  "verification": {
+    "single_verification": {
+      "avg_time_ms": 21.75273895263672,
+      "min_time_ms": 20.694732666015625,
+      "max_time_ms": 22.76444435119629,
+      "std_time_ms": 0.6139819315812794
+    },
+    "batch_verification": [
+      {
+        "batch_size": 10,
+        "total_time_ms": 226.28116607666016,
+        "avg_time_per_entry_ms": 22.628116607666016
+      },
+      {
+        "batch_size": 50,
+        "total_time_ms": 1243.642807006836,
+        "avg_time_per_entry_ms": 24.87285614013672
+      },
+      {
+        "batch_size": 100,
+        "total_time_ms": 2425.2092838287354,
+        "avg_time_per_entry_ms": 24.252092838287354
+      },
+      {
+        "batch_size": 500,
+        "total_time_ms": 12219.08688545227,
+        "avg_time_per_entry_ms": 24.43817377090454
+      },
+      {
+        "batch_size": 1000,
+        "total_time_ms": 27168.412446975708,
+        "avg_time_per_entry_ms": 27.168412446975708
+      }
+    ]
+  },
+  "memory": {
+    "adaptive_chunking_mb": 4.2309675216674805,
+    "fixed_chunking_mb": 4.238528251647949,
+    "traditional_merkle_mb": 4.229949951171875,
+    "memory_improvement_vs_traditional": -0.0240563247166449
+  },
+  "proof_generation": {
+    "proof_results": [
+      {
+        "index": 0,
+        "generation_time_ms": 22.478818893432617,
+        "proof_size_bytes": 1106,
+        "proof_length": 14
+      },
+      {
+        "index": 2500,
+        "generation_time_ms": 21.67034149169922,
+        "proof_size_bytes": 1101,
+        "proof_length": 14
+      },
+      {
+        "index": 5000,
+        "generation_time_ms": 22.17841148376465,
+        "proof_size_bytes": 1101,
+        "proof_length": 14
+      },
+      {
+        "index": 7500,
+        "generation_time_ms": 22.489547729492188,
+        "proof_size_bytes": 1099,
+        "proof_length": 14
+      },
+      {
+        "index": 9999,
+        "generation_time_ms": 20.791292190551758,
+        "proof_size_bytes": 624,
+        "proof_length": 8
+      }
+    ],
+    "avg_generation_time_ms": 21.921682357788086,
+    "avg_proof_size_bytes": 1006.2
+  },
+  "tampering_detection": [
+    {
+      "tamper_ratio": 0.01,
+      "actual_tampered": 100,
+      "detected_tampered": 100,
+      "true_positives": 100,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "detection_time_seconds": 0.08677911758422852,
+      "detection_accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    {
+      "tamper_ratio": 0.05,
+      "actual_tampered": 500,
+      "detected_tampered": 500,
+      "true_positives": 500,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "detection_time_seconds": 0.06455755233764648,
+      "detection_accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    {
+      "tamper_ratio": 0.1,
+      "actual_tampered": 1000,
+      "detected_tampered": 1000,
+      "true_positives": 1000,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "detection_time_seconds": 0.11236095428466797,
+      "detection_accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    {
+      "tamper_ratio": 0.2,
+      "actual_tampered": 2000,
+      "detected_tampered": 2000,
+      "true_positives": 2000,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "detection_time_seconds": 0.10717201232910156,
+      "detection_accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    {
+      "tamper_ratio": 0.5,
+      "actual_tampered": 5000,
+      "detected_tampered": 5000,
+      "true_positives": 5000,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "detection_time_seconds": 0.08958959579467773,
+      "detection_accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    }
+  ],
+  "hash_algorithms": {
+    "sha256": {
+      "ingestion_time_seconds": 0.06123995780944824,
+      "ingestion_rate_logs_per_sec": 163292.07853335876,
+      "verification_time_ms": 21.29673957824707,
+      "root_hash": "cb9b31f0b793315e..."
+    },
+    "blake2b": {
+      "ingestion_time_seconds": 0.057118892669677734,
+      "ingestion_rate_logs_per_sec": 175073.42199070015,
+      "verification_time_ms": 21.17300033569336,
+      "root_hash": "346313a59106efd2..."
+    }
+  },
+  "controlled_stress": {
+    "num_logs": 20000,
+    "window_size": 2000,
+    "pressure_baseline": 0.25,
+    "pressure_stress": 0.85,
+    "stress_windows": 3,
+    "stress_window_start": 1,
+    "stress_window_end": 4,
+    "total_time_seconds": 0.05869969999184832,
+    "overall_throughput_logs_per_sec": 170358.6219586933,
+    "rows": [
+      {
+        "window": 0,
+        "phase": "baseline",
+        "pressure": 0.25,
+        "window_logs": 2000,
+        "num_batches": 7,
+        "chunk_size_kb": 64.0
+      },
+      {
+        "window": 1,
+        "phase": "stress",
+        "pressure": 0.85,
+        "window_logs": 2000,
+        "num_batches": 8,
+        "chunk_size_kb": 51.199
+      },
+      {
+        "window": 2,
+        "phase": "stress",
+        "pressure": 0.85,
+        "window_logs": 2000,
+        "num_batches": 10,
+        "chunk_size_kb": 40.959
+      },
+      {
+        "window": 3,
+        "phase": "stress",
+        "pressure": 0.85,
+        "window_logs": 2000,
+        "num_batches": 12,
+        "chunk_size_kb": 32.767
+      },
+      {
+        "window": 4,
+        "phase": "baseline",
+        "pressure": 0.25,
+        "window_logs": 2000,
+        "num_batches": 11,
+        "chunk_size_kb": 36.043
+      }
+    ]
+  }
+}

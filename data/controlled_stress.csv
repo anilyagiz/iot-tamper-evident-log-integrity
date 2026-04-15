@@ -1,0 +1,6 @@
+window,phase,pressure,window_logs,num_batches,chunk_size_kb
+0,baseline,0.25,2000,7,64.0
+1,stress,0.85,2000,8,51.199
+2,stress,0.85,2000,10,40.959
+3,stress,0.85,2000,12,32.767
+4,baseline,0.25,2000,11,36.043

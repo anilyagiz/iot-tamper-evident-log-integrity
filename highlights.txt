@@ -1,0 +1,4 @@
+Validated Merkle proof logging for tamper-evident IoT audit streams.
+Fixed metric and batching bugs that distorted integrity benchmarks.
+Achieved 126.9k logs/s ingestion at 100k entries with 5-run statistics.
+Provided reproducible code, results JSON, and plots for verification.

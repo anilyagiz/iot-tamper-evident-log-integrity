@@ -1,0 +1,15 @@
+Cover Letter (Draft)
+
+Dear Editors,
+
+Please consider our manuscript entitled "Lightweight Tamper-Evident IoT Log Integrity Verification with Merkle Proofs: Implementation, Validation, and Benchmarking" for publication in Computers & Security.
+
+The paper presents a practical integrity-verification pipeline for IoT audit logs based on Merkle-tree commitments and inclusion proofs. Beyond proposing the design, we report an implementation audit that identifies and corrects evaluation defects (tampering metric miscounting and repeated full-tree rebuilds) that materially affect conclusions. We then provide reproducible benchmarks and a literature-grounded discussion of trust and deployment trade-offs versus blockchain-based audit logging.
+
+The manuscript is original, has not been published elsewhere, and is not under consideration by another journal.
+
+Sincerely,
+[Corresponding Author Name]
+[Affiliation]
+[Email]
+
