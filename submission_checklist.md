@@ -13,6 +13,8 @@ Status is based on the current workspace files.
 - Generative AI writing declaration (if applicable): included in paper_cose.tex as a fill-in section
 
 Notes
-- LaTeX compilation was not validated here because pdflatex is not installed on this machine.
+- LaTeX compilation was validated with `pdflatex` + `bibtex` on 2026-04-21 (MiKTeX). Output: `paper_cose.pdf`.
+- arXiv source bundle was generated: `arxiv_source.zip` (also mirrored under `arxiv/`).
+- Citation/DOI/URL sanity-check report: `reference_verification_report.md`.
 - Author names, affiliations, and emails are placeholders and must be replaced.
 
